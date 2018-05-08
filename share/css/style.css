@@ -1,0 +1,52 @@
+body {
+	width:100%;
+	margin:0;
+	padding:0;
+	background:#f8f8f8;
+	/*font-family:'微软雅黑','Microsoft Yahei','simsun';*/
+	font-family: '苹方', '微软雅黑','Microsoft Yahei',sans-serif;
+	color:#444;
+}
+ul,li {
+	margin:0;
+	padding:0;
+}
+li {
+	list-style-type: none;
+}
+a {
+	color:#444;
+}
+.wechat{position:fixed;top:0;bottom:0;left:0;z-index:999;display:none;width:100%;height:100%; background:rgba(0,0,0,0.5);}
+.wechat img {width:90%; margin:0 5%;}
+#warpper {
+	max-width:640px;
+	margin:0 auto;
+	background-image:linear-gradient(to bottom, #4aadff, #0e39ce,#040c22);
+	background-image:-webkit-linear-gradient(to bottom, #4aadff, #0e39ce,#040c22);
+}
+#warpper img {
+	width:100%;
+	display: block;
+}
+#index4 {
+	position:relative;
+}
+#index4 > a{
+	display:inline-block;
+	width:100%;
+	position:absolute;
+	right:0;
+	top:0;
+	text-align: center;
+	color: #fff;
+	text-decoration:none;
+}
+#index4 > a:last-child {
+	top:63px;
+}
+#index4 > a.ios img,#index4 > a.android img{
+	border-radius:12px;
+	display: inline-block;
+	width:185px;
+}

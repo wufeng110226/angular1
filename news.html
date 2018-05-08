@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN" ng-app="myApp" ng-controller="news">
+  <head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>{{title}}</title>
+
+    <link href="dist/all.min.css" rel="stylesheet" />
+    <style>
+    	#warpper {
+    		background: #fafafa;
+    	}
+    	.news .spe {
+		    border: 1px solid #ddd;
+			border-radius: 0 0 4px 4px;
+			border-top: 0;
+			padding: 10px;
+    	}
+    	.news .spe p {
+		    border:0;
+			border-radius: 0;
+			padding:0;
+    	}
+    	.news .speP {
+    		text-align: center;
+    	}
+    	.news .speH4 {
+    		font-size:14px;
+    		line-height:20px;
+    	}
+    	.news .speColor {
+    		color: #ff8314;
+    	}
+    	#back {
+		    display: inline-block;
+				background: url(img/back.png);
+				background-repeat: no-repeat;
+				width: 3rem;
+				height: 2rem;
+				background-size: 3rem;
+				position: absolute;
+				transform: rotate(37deg);
+    	}
+    </style>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script>var isag = true;</script>
+    <script src="dist/vendors.bundle.js"></script>
+    <script src="dist/index.js"></script>
+    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  	<div class="nowloading"> <!--加载中动画-->
+  		<div class="loader-inner pacman"><div></div><div></div><div></div><div></div><div></div></div>
+  	</div>
+  	<div id="warpper" class="news">
+  		<header><p class="blocks"></p><p class="headers"></p><a ng-click="back($event)"><img src="img/arrow.png" /></a></header>
+  		<div id="self_article_shell">
+	  		<h4>{{title}}</h4>
+	  		<p ng-bind-html="description | trustHtml" class="speColor">{{description}}</p>
+	  		<div class="self_article_box" ng-repeat="x in det">
+	  			<h4 class="speH4">{{x.detTitle}}</h4>
+	  			<div class="spe">
+	  				<div ng-repeat="xx in x.detDet">
+	  					<p class="speP speColor">{{xx.detTitle}}</p>
+	  					<p ng-bind-html="xx.content | trustHtml">{{xx.content}}</p>
+	  				</div>
+	  			</div>
+	  		</div>
+  		</div>
+  	</div>
+  </body>
+</html>
